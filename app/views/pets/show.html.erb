@@ -1,0 +1,54 @@
+﻿<h2>Pet ID: 
+  <%= @pet.id %></h2>
+
+<div style = "border:10px; border-style:solid; border-color:#008080; padding: 1em;">
+  <p>
+    <strong>Location:</strong>
+      <%= @pet.location %><br>
+    <strong>Phone:</strong>
+      <%= @pet.phone %><br>
+    <strong>Description:</strong>
+      <%= @pet.description %>
+  </p>
+
+<%= link_to 'Back', pets_path %>
+<%= link_to 'Edit', edit_pet_path(@pet) %>
+</div>
+
+<p>
+  <%= link_to 'Delete Listing', pet_path(@pet),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+</p><br>
+
+
+<h3>Comments:</h3>
+
+<div style = "border:3px; border-style:solid; border-color:#000000;">
+
+<% @pet.comments.each do |comment| %>
+  <p>
+    <strong><%= comment.name %>: </strong>
+    <div style = "border:2px; border-style:solid; border-color:#008080; padding: 1em">
+      <%= comment.body %>
+    </div>
+    <div align = "right">
+    <%= link_to 'Delete', [comment.pet, comment],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+      <br><br></p>
+    </div>
+<% end %>
+
+<%= form_with(model: [ @pet, @pet.comments.build ], local: true) do |form| %>
+  <p>Your name: 
+    <%= form.text_field :name %>
+  </p>
+  <p>Comment: 
+    <%= form.text_area :body %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+</div>

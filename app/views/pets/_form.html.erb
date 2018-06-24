@@ -1,0 +1,24 @@
+﻿<%= form_with model: @pet,  local: true do |form| %>  
+
+<table>
+    <tr>
+      <td><%= form.label :location %></td>
+      <td><%= form.text_field :location %></td>
+    </tr>
+
+    <tr>
+      <td><%= form.label :phone %></td>
+      <td><%= form.text_field :phone %></td>
+    </tr>
+
+    <tr>
+      <td><%= form.label :description %></td>
+      <td><%= form.text_area :description %></td>
+    </tr>
+  </table>
+
+  <p>
+    <%= form.submit %>
+  </p>
+
+<% end %>

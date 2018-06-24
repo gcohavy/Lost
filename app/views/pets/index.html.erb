@@ -1,0 +1,25 @@
+﻿<h1>Registered Pets:</h1>
+ 
+<div style = "border:10px; border-style:solid; border-color:#008080; padding: 1em;">
+<table>
+  <tr>
+    <th>Location</th>
+    <th>Phone</th>
+    <th>Description</th>
+    <th></th>
+  </tr>
+ 
+  <% @pets.each do |pet| %>
+    <tr>
+      <td><%= pet.location %></td>
+      <td><%= pet.phone %></td>
+      <td><%= link_to 'View', pet_path(pet) %></td>
+    </tr>
+  <% end %>
+</table>
+</div>
+
+  <p>
+    <%= link_to 'Register a found pet  ', new_pet_path %><br>
+    <%= link_to 'Home', controller: 'home' %>
+  </p>
