@@ -1,6 +1,6 @@
 class CommentMailer < ApplicationMailer
 
-  default from: 'gcohavy@gmail.com'
+  default from: 'default@from.com'
 
   def welcome_email
     @pet = params[:sendTo]
