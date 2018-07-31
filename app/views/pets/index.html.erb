@@ -4,7 +4,11 @@
 <table>
   <tr>
     <th>Location</th>
+    <th> | </th>
     <th>Phone</th>
+    <th> | </th>
+    <th>Email</th>
+    <th> | </th>
     <th>Description</th>
     <th></th>
   </tr>
@@ -12,7 +16,11 @@
   <% @pets.each do |pet| %>
     <tr>
       <td><%= pet.location %></td>
+      <th> | </th>
       <td><%= pet.phone %></td>
+      <th> | </th>
+      <td><%= pet.email %></td>
+      <th> | </th>
       <td><%= link_to 'View', pet_path(pet) %></td>
     </tr>
   <% end %>

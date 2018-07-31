@@ -2,6 +2,10 @@ class CommentsController < ApplicationController
   def create
     @pet = Pet.find(params[:pet_id])
     @comment = @pet.comments.create(comment_params)
+    if @comment.save
+      CommentMailer.with(sendTo: @pet).welcome_email.deliver_later
+    end
+
     redirect_to pet_path(@pet)
   end
 

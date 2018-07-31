@@ -4,4 +4,5 @@ class Pet < ApplicationRecord
 		     length: { minimum: 10 }
   validates :location, presence: true,
 		length: { minimum: 2 }
+  validates :email, presence: true
 end

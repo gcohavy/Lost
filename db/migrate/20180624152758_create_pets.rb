@@ -7,6 +7,7 @@ class CreatePets < ActiveRecord::Migration[5.1]
       t.string :location
 
       t.string :phone
+      t.string :email
 
       t.text :description
 
