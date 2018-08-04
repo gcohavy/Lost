@@ -6,6 +6,6 @@ Ruby version: ruby 2.3.3p222
 
 You will need to configure your email information in config/environments/development.rb, then select the 'default from' in app/mailers/comments_mailer.rb for it to properly send out an email.
 
-run rake db:migrate
+run >>rake db:migrate
 
 The website should be up and running.
