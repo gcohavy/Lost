@@ -1,24 +1,11 @@
 # README
+This website is simple. Someone finds a pet, they register it and leave their contact information. If anyone chooses to comment on the posting, the original poster will get a notification email. 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+Ruby version: ruby 2.3.3p222 
 
-* Ruby version
+You will need to configure your email information in config/environments/development.rb, then select the 'default from' in app/mailers/comments_mailer.rb for it to properly send out an email.
 
-* System dependencies
+run rake db:migrate
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The website should be up and running.
